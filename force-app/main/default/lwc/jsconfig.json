@@ -3,15 +3,6 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
-            "c/accountList": [
-                "accountList/accountList.js"
-            ],
-            "c/datatableEx": [
-                "datatableEx/datatableEx.js"
-            ],
-            "c/paginationcontrols": [
-                "paginationcontrols/paginationcontrols.js"
-            ],
             "c/opportunityList": [
                 "opportunityList/opportunityList.js"
             ]
