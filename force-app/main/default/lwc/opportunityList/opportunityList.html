@@ -1,0 +1,5 @@
+<template>
+    <lightning-card  title="Opportinity List">
+        <lightning-datatable data={opportunities} columns={columns} key-field="Id" onsort={updateColumnSorting} sorted-by={sortedBy} sorted-direction={sortedDirection}></lightning-datatable>        
+    </lightning-card> 
+</template>

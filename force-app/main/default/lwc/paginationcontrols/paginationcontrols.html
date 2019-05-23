@@ -1,0 +1,75 @@
+<!--
+ - paginationControls - Lightning Web component
+ -
+ - @author Dibocor
+ - @version 1.0
+ - @description paginationControls Lightning Web component
+ - @history
+ - 16/05/2019 : Dibocor NGOM - Original
+ -->
+
+ <template>
+    <div if:true={hasRecords}>
+ 
+         <div class="slds-align_absolute-center">
+             <div class="slds-grid slds-grid_vertical slds-grid--align-center">
+                 <span if:true={isTextAboveTheButtons}>
+                     <div class="slds-col slds-text-align_center slds-p-bottom--medium slds-text-color_weak">
+                         {showTextPagination}
+                     </div>
+                 </span>
+ 
+                 <div class="slds-col">
+                     <lightning-button label={firstLabel}
+                                       onclick={handleButtonClick}
+                                       variant="neutral"
+                                       name="first"
+                                       class="slds-p-right_xx-small"
+                                       disabled={onFirstPage}></lightning-button>
+ 
+                     <lightning-button label={previousLabel}
+                                       onclick={handleButtonClick}
+                                       variant="neutral"
+                                       name="previous"
+                                       class="slds-p-right_xx-small"
+                                       disabled={onFirstPage}></lightning-button>
+ 
+                     <span if:true={showTheThreePointsLeft}><span class="slds-p-horizontal--x-small"> ... </span></span>
+ 
+                     <template for:each={buttonList} for:item="button">
+                             <lightning-button key={button.pageNumber}
+                                               label={button.label}
+                                               class="slds-p-right_xx-small"
+                                               onclick={handleButtonClick}
+                                               variant={button.variant}
+                                               name={button.pageNumber}
+                                               disabled={button.disabled}></lightning-button>
+                     </template>
+ 
+ 
+                     <span if:true={showTheThreePointsRight}><span class="slds-p-horizontal--x-small"> ... </span></span>
+ 
+                     <lightning-button label={nextLabel}
+                                       onclick={handleButtonClick}
+                                       variant="neutral"
+                                       name="next"
+                                       class="slds-p-right_xx-small"
+                                       disabled={onLastPage}></lightning-button>
+ 
+                     <lightning-button label={lastLabel}
+                                       onclick={handleButtonClick}
+                                       variant="neutral"
+                                       class="slds-p-right_xx-small"
+                                       name="last"
+                                       disabled={onLastPage}></lightning-button>
+                 </div>
+ 
+                 <span if:true={isTextBelowTheButtons}>
+                     <div class="slds-col slds-text-align_center slds-p-top--medium slds-text-color_weak">
+                         {showTextPagination}
+                     </div>
+                 </span>
+             </div>
+         </div>
+     </div>
+ </template>

@@ -1,0 +1,15 @@
+<template>
+  <h2>Data table Example -1</h2>
+  <lightning-datatable data={shownPageRecordsList} columns={columns} key-field="Id" onsort={updateColumnSorting} sorted-by={sortedBy} sorted-direction={sortedDirection}>
+  </lightning-datatable>
+  <div if:true={ifShowPagination}>
+        <div class="slds-p-top--medium slds-p-bottom--medium">
+            <c-paginationcontrols   onpaginationclick={handlePageControlClick}
+                                    current-page-number={currentPageNumber}
+                                    record-per-page={recordPerPage}
+                                    total-record-number={totalRecordNumber}
+                                    text-position="bottom">
+            </c-paginationcontrols>
+        </div>
+    </div>
+</template>
